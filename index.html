@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepasha Jenamani – Software Engineer · AI/ML</title>
+<style>
+:root{--bg:#fbfaf7;--card:#fff;--ink:#1c1b19;--mute:#6b675f;--line:#e6e2d8;--acc:#0f766e;--accbg:#e1f3f0;--warn:#b45309;--warnbg:#fdf0dc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1d1d1a;--ink:#f1efe9;--mute:#a19d92;--line:#2f2e2a;--acc:#5eead4;--accbg:#12332f;--warn:#fbbf24;--warnbg:#3a2a0c}}
+:root[data-theme="dark"]{--bg:#141412;--card:#1d1d1a;--ink:#f1efe9;--mute:#a19d92;--line:#2f2e2a;--acc:#5eead4;--accbg:#12332f;--warn:#fbbf24;--warnbg:#3a2a0c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:0 20px 60px}
+nav{display:flex;gap:18px;flex-wrap:wrap;padding:18px 0;font-size:14px}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+nav a{color:var(--mute)}
+header{padding:36px 0 28px}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+.role{color:var(--acc);font-weight:600;margin:0 0 14px}
+.lead{color:var(--mute);max-width:640px;margin:0 0 20px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:999px;font-size:14px}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+section{padding:28px 0;border-top:1px solid var(--line)}
+h2{font-size:1.25rem;margin:0 0 4px}
+.sub{color:var(--mute);margin:0 0 18px;font-size:14px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 6px;font-size:1rem}
+.card p{margin:0 0 10px;font-size:14px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--accbg);color:var(--acc);margin:0 4px 4px 0}
+.st{font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--warnbg);color:var(--warn);float:right}
+.st.done{background:var(--accbg);color:var(--acc)}
+.metric{font-weight:600;color:var(--ink)}
+.job{margin-bottom:16px}.job b{display:block}.job span{color:var(--mute);font-size:14px}
+footer{padding-top:24px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#now">Now building</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header>
+<h1>Deepasha Jenamani</h1>
+<p class="role">Software Engineer · Java · AI/ML &amp; Data Analytics</p>
+<p class="lead">7+ years building enterprise Java and full-stack systems for Wells Fargo, Apple and more, plus an M.S. in Data Analytics (SJSU) with hands-on work in computer vision, big data and recommendation systems. Based in the San Jose Bay Area and authorized to work in the U.S.</p>
+<div class="btns">
+<a class="btn p" href="#contact">Get in touch</a>
+<a class="btn" id="li" href="#">LinkedIn</a>
+<a class="btn" id="gh" href="#">GitHub</a>
+<a class="btn" id="lc" href="#">LeetCode</a>
+</div>
+</header>
+
+<section id="now">
+<h2>Now building</h2>
+<p class="sub">Public build log: each project ships to GitHub with a README and a short write-up.</p>
+<div class="grid" id="nowGrid"></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="sub">Selected work from my M.S. in Data Analytics.</p>
+<div class="grid" id="projGrid"></div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<p class="sub">Enterprise Java, 2012–2019</p>
+<div id="jobs"></div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p class="sub">&nbsp;</p>
+<div id="skillList"></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="sub">Open to software engineering and AI/ML roles.</p>
+<p><a id="mail" href="#">jdeepasha@gmail.com</a></p>
+<footer>© <span id="yr"></span> Deepasha Jenamani</footer>
+</section>
+</main>
+
+<script>
+/* ---- EDIT THIS BLOCK to update your site ---- */
+var LINKS={linkedin:"https://www.linkedin.com/in/deepasha-jenamani",github:"https://github.com/jdeeps",leetcode:"https://leetcode.com/u/jdeepasha/",email:"jdeepasha@gmail.com"};
+
+// status: "Planned" | "In progress" | "Shipped". Add repo/demo URLs when you have them.
+var NOW=[
+{t:"Real-time fraud detection service",s:"Planned",d:"Spring Boot + Kafka streaming service that scores transactions with a Python ML model behind a REST API.",tags:["Java","Spring Boot","Kafka","Docker"]},
+{t:"Taxi fare prediction API",s:"Planned",d:"Take my NYC taxi GBT model from notebook to a deployed, containerized prediction service with tests and CI.",tags:["Python","FastAPI","Docker","CI/CD"]},
+{t:"Document Q&amp;A (RAG) assistant",s:"Planned",d:"Retrieval-augmented chatbot over PDFs with a simple web UI and evaluation of answer quality.",tags:["Python","LLMs","Vector DB","React"]}
+];
+
+var PROJECTS=[
+{t:"Autonomous Vehicle Testing Framework",d:"Computer-vision framework for lane, obstacle, weather and intersection detection using Mask R-CNN, YOLOv7, Faster R-CNN and SSD, validated end to end in the CARLA simulator.",m:"+5–7% model accuracy",tags:["PyTorch","YOLOv7","CARLA"]},
+{t:"Urban Transportation Resilience",d:"Big data pipeline over NYC taxi trips and weather data with real-time fare prediction.",m:"72M+ records · R² 0.91",tags:["PySpark","Kafka","Databricks","S3"]},
+{t:"Transportation Mode Detection",d:"Classified travel modes from five years of GPS trajectories using Random Forest, SVM, Decision Tree and LSTM.",m:"82% accuracy",tags:["Scikit-learn","TensorFlow","LSTM"]},
+{t:"Artistic Image Generation",d:"Personalized cartoon-style image synthesis combining DreamBooth fine-tuned Stable Diffusion with CartoonGAN.",m:"FID 340 → 35.2",tags:["PyTorch","Diffusers","GANs"]},
+{t:"Book Recommendation System",d:"Collaborative filtering engine compared across KNN, SVD, NMF and weighted-average models.",m:"1.1M+ ratings",tags:["Python","SVD","Hits@k"]},
+{t:"Credit Card Fraud Detection",d:"Fraud models on imbalanced transaction data with SMOTE, plus exploratory analysis of temporal anomalies.",m:"1M+ transactions",tags:["Scikit-learn","SMOTE","Tableau"]}
+];
+
+var JOBS=[
+{r:"Application System Engineer 4",c:"Wells Fargo EGS",p:"Aug 2016 – Jul 2019",d:"Led migration of legacy Struts modules to Spring MVC on the Store Vision Platform used across branches. Built the Interview Tracker and Smart Reporting tools end to end with Spring Boot, Angular and MySQL. Earned Achieving Excellence and Champion awards."},
+{r:"Technology Analyst",c:"Infosys (client: Apple)",p:"Mar 2015 – Aug 2016",d:"Built corporate card and eApproval finance applications with REST integrations, Quartz batch jobs and security features."},
+{r:"Project Engineer",c:"Wipro Technologies",p:"Feb 2012 – Feb 2015",d:"Contributed to a national crime records system for NCRB and the Sephora pricing engine for JCPenney using Java, Spring and Hibernate."}
+];
+
+var SKILLS={"Languages":"Java, Python, SQL, JavaScript","Frameworks":"Spring Boot, Spring MVC, Hibernate, Angular, REST APIs","ML / DL":"Scikit-learn, TensorFlow, PyTorch, GANs, Diffusers","Big Data":"PySpark, Kafka, Amazon S3, Azure Databricks","Data &amp; tools":"Oracle, MySQL, Tableau, Maven, Gradle, GitHub"};
+/* ---- end editable block ---- */
+
+function $(i){return document.getElementById(i)}
+function tags(a){return a.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')}
+function link(o){var h='';if(o.repo)h+='<a href="'+o.repo+'">Code</a> ';if(o.demo)h+='<a href="'+o.demo+'">Demo</a>';return h?'<p>'+h+'</p>':''}
+$("nowGrid").innerHTML=NOW.map(function(p){return '<div class="card"><span class="st'+(p.s==="Shipped"?' done':'')+'">'+p.s+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p>'+link(p)+tags(p.tags)+'</div>'}).join('');
+$("projGrid").innerHTML=PROJECTS.map(function(p){return '<div class="card"><h3>'+p.t+'</h3><p>'+p.d+'</p><p class="metric">'+p.m+'</p>'+link(p)+tags(p.tags)+'</div>'}).join('');
+$("jobs").innerHTML=JOBS.map(function(j){return '<div class="job"><b>'+j.r+' · '+j.c+'</b><span>'+j.p+'</span><p style="margin:6px 0 0">'+j.d+'</p></div>'}).join('');
+$("skillList").innerHTML=Object.keys(SKILLS).map(function(k){return '<p style="margin:0 0 8px"><b>'+k+':</b> <span style="color:var(--mute)">'+SKILLS[k]+'</span></p>'}).join('');
+$("li").href=LINKS.linkedin;$("gh").href=LINKS.github;$("lc").href=LINKS.leetcode;$("mail").href="mailto:"+LINKS.email;$("mail").textContent=LINKS.email;
+$("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
